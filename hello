@@ -1,0 +1,47 @@
+
+//Create an interdace called icustomer it will have two variables username and password. 
+//Also another function called login that takes two inputs
+// 
+
+package interfacepractice;
+
+import java.util.Scanner;
+
+interface iCustomer{
+    final String username = "Name", password = "Password";
+    void login(String u, String p);
+}
+
+class User implements iCustomer{
+    
+    @Override
+    public void login(String a, String b){
+        if( (username.equals(a)) && password.equals(b)){
+            System.out.println("Login Successful");
+        }else if((username.equals(a))){
+            System.out.println("Username Not Found");
+        }else{
+            System.out.println("Incorrect Password");
+        }
+    }
+    
+}
+
+
+
+
+public class InterfacePractice {
+
+    
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+        
+        String un = scan.nextLine();
+        String up = scan.nextLine();
+        
+        User ob = new User();
+        ob.login(un, up);
+    }
+    
+}
